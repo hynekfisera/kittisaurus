@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply py-2 lg:py-3 px-6 lg:px-8 rounded-lg xl:text-lg font-medium;
+  }
+
+  .btn-primary {
+    @apply text-pink-100 bg-rose-500 hover:bg-rose-600 transition duration-200;
+  }
+}
