@@ -1,8 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
-const config = {
+module.exports = {
   siteUrl: "https://kittisaurus.hynekfisera.com",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
+  robotsTxtOptions: {
+    policies: [{ userAgent: "*", allow: "/" }],
+  },
 };
-
-export default config;
