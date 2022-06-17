@@ -66,27 +66,27 @@ const questions: Question[] = [
     answers: [
       {
         title: "Most calm",
-        pointsFor: [[2, 5, 6],[3, 5, 9]]
+        pointsFor: [2, 3, 5, 6, 9],
       },
       {
         title: "Least calm",
-        pointsFor: [[1, 10],[1, 10]]
-      }
-    ]
+        pointsFor: [1, 10],
+      },
+    ],
   },
   {
     title: "Are you smart?",
     answers: [
       {
         title: "Most smart",
-        pointsFor: [[1, 2, 8],[2, 8]]
+        pointsFor: [1, 2, 8],
       },
       {
         title: "Least smart",
-        pointsFor: [[3, 4, 7],[3]]
-      }
-    ]
-  }
+        pointsFor: [3, 4, 7],
+      },
+    ],
+  },
 ];
 
 export default questions;
