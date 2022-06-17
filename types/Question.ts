@@ -6,4 +6,8 @@ export type Question = {
 export type Answer = {
   title: string;
   pointsFor: number[] | Array<number[]>;
+<<<<<<< Updated upstream
 };
+=======
+};
+>>>>>>> Stashed changes

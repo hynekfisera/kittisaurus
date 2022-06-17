@@ -60,6 +60,33 @@ const questions: Question[] = [
       },
     ],
   },
+  //Personality part, 1 - 5, most-unlikely - most-likely
+  {
+    title: "Are you able to stay calm?",
+    answers: [
+      {
+        title: "Most calm",
+        pointsFor: [[2, 5, 6],[3, 5, 9]]
+      },
+      {
+        title: "Least calm",
+        pointsFor: [[1, 10],[1, 10]]
+      }
+    ]
+  },
+  {
+    title: "Are you smart?",
+    answers: [
+      {
+        title: "Most smart",
+        pointsFor: [[1, 2, 8],[2, 8]]
+      },
+      {
+        title: "Least smart",
+        pointsFor: [[3, 4, 7],[3]]
+      }
+    ]
+  }
 ];
 
 export default questions;
