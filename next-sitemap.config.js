@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://kittisaurus.fisera.co",
+  siteUrl: "https://kittisaurus.hynekfisera.com",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   robotsTxtOptions: {
