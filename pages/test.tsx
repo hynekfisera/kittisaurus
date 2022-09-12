@@ -5,9 +5,7 @@ import { Question } from "../types/Question";
 import { Points } from "../types/Points";
 import Router from "next/router";
 
-type Props = {};
-
-export default function Test({}: Props) {
+export default function Test() {
   const [number, setNumber] = useState<number>(0);
   const [question, setQuestion] = useState<Question>(questions[0]);
   const [points, setPoints] = useState<Points[]>([]);
@@ -55,7 +53,7 @@ export default function Test({}: Props) {
     // check if another question exists
     if (questions.length - 1 === number) {
       let url = "";
-      points.forEach((cat, i) => {
+      temp.forEach((cat, i) => {
         url += `${cat.catId}-${cat.points}-${cat.maxPoints}`;
         if (i !== points.length - 1) {
           url += ",";
@@ -75,14 +73,24 @@ export default function Test({}: Props) {
       <main className="bg-gradient-to-br from-rose-200 to-orange-200 min-h-screen flex items-center">
         <section className="max-w-screen-md mx-auto px-4 md:px-0 flex flex-col items-center gap-4">
           <h1 className="text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-900 text-center">{question.title}</h1>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center flex-wrap gap-6">
             {question.answers.length === 2 && (
               <>
-                <div onClick={() => onAnswer(0, 1)}>{question.answers[0].title}</div>
-                <div onClick={() => onAnswer(0, 0.5)}>+</div>
-                <div onClick={() => onAnswer(0, 0)}>.</div>
-                <div onClick={() => onAnswer(1, 0.5)}>-</div>
-                <div onClick={() => onAnswer(1, 1)}>{question.answers[1].title}</div>
+                <div onClick={() => onAnswer(0, 1)} className="answer">
+                  100% <strong>{question.answers[0].title}</strong>
+                </div>
+                <div onClick={() => onAnswer(0, 0.5)} className="answer">
+                  More <strong>{question.answers[0].title}</strong>
+                </div>
+                <div onClick={() => onAnswer(0, 0)} className="answer">
+                  Don{"'"}t know
+                </div>
+                <div onClick={() => onAnswer(1, 0.5)} className="answer">
+                  More <strong>{question.answers[1].title}</strong>
+                </div>
+                <div onClick={() => onAnswer(1, 1)} className="answer">
+                  100% <strong>{question.answers[1].title}</strong>
+                </div>
               </>
             )}
             {question.answers.length !== 2 &&
@@ -92,6 +100,7 @@ export default function Test({}: Props) {
                   onClick={() => {
                     onAnswer(i, 1);
                   }}
+                  className="answer"
                 >
                   {answer.title}
                 </div>

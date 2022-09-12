@@ -10,4 +10,8 @@
   .btn-primary {
     @apply text-pink-100 bg-rose-500 hover:bg-rose-600 transition duration-200;
   }
+
+  .answer {
+    @apply select-none cursor-pointer hover:underline;
+  }
 }
