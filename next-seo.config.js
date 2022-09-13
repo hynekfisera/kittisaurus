@@ -2,6 +2,7 @@ const seo = {
   defaultTitle: "Kittisaurus personality test",
   titleTemplate: "%s - Kittisaurus personality test",
   description: "Which Kittisaurus cat are you? Let’s find out!",
+  canonical: "https://kittisaurus.hynekfisera.com/",
   openGraph: {
     type: "website",
     locale: "en",

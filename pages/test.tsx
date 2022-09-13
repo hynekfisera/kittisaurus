@@ -69,7 +69,7 @@ export default function Test() {
 
   return (
     <>
-      <NextSeo title="Test" />
+      <NextSeo title="Test" canonical="https://kittisaurus.hynekfisera.com/test" />
       <main className="bg-gradient-to-br from-rose-200 to-orange-200 min-h-screen flex items-center">
         <section className="max-w-screen-md mx-auto px-4 md:px-0 flex flex-col items-center gap-4">
           <h1 className="text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-900 text-center">{question.title}</h1>
