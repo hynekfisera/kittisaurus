@@ -32,7 +32,7 @@ export default function Test() {
     // update points
     temp = temp.map((cat) => {
       if (question.answers[i].pointsFor.includes(cat.catId)) {
-        return { ...cat, points: cat.maxPoints + count };
+        return { ...cat, points: cat.points + count };
       } else {
         return cat;
       }
@@ -46,7 +46,7 @@ export default function Test() {
         return cat;
       }
     });
-
+    console.log(temp);
     // set new points
     setPoints(temp);
 
