@@ -60,17 +60,16 @@ const questions: Question[] = [
       },
     ],
   },
-  //Personality part, 1 - 5, most-unlikely - most-likely
   {
     title: "Are you able to stay calm?",
     answers: [
       {
-        title: "Most calm",
-        pointsFor: [2, 3, 5, 6, 9],
+        title: "Calm",
+        pointsFor: [2, 3, 4, 5, 6, 9],
       },
       {
-        title: "Least calm",
-        pointsFor: [1, 10],
+        title: "Wild",
+        pointsFor: [1, 7, 10]
       },
     ],
   },
@@ -78,15 +77,54 @@ const questions: Question[] = [
     title: "Are you smart?",
     answers: [
       {
-        title: "Most smart",
+        title: "Smart",
         pointsFor: [1, 2, 8],
       },
       {
-        title: "Least smart",
+        title: "Dull",
         pointsFor: [3, 4, 7],
       },
     ],
   },
+  {
+    title: "Are you feeling inconvenient or afraid of being touched?",
+    answers: [
+      {
+        title: "Inconvenient",
+        pointsFor: [1, 3, 5, 9, 10]
+      },
+      {
+        title: "Convenient",
+        pointsFor: [2, 4, 6, 7, 8]
+      }
+    ]
+  },
+  {
+    title: "Are you a vocal type?",
+    answers: [
+      {
+        title: "Vocal",
+        pointsFor: [1, 7, 8]
+      },
+      {
+        title: "Quiet",
+        pointsFor: [2, 3, 4, 5, 6]
+      }
+    ]
+  },
+  {
+    title: "Do you care about others?",
+    answers: [
+      {
+        title: "Caring",
+        pointsFor: [2, 3, 4, 5, 6, 8, 9]
+      },
+      {
+        title: "Careless",
+        pointsFor: [1, 7, 10]
+      }
+    ]
+  }
 ];
 
 export default questions;
