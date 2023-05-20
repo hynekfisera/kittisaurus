@@ -61,7 +61,7 @@ export default function Result() {
                 ))}
             </div>
             <div>
-              <button className="btn btn-primary" onClick={() => navigator.clipboard.writeText(window.location.origin + Router.asPath)}>
+              <button className="btn btn-primary" onClick={() => navigator.clipboard.writeText(window.location.origin + router.asPath)}>
                 Copy link to result
               </button>
               <Link href="/test">
