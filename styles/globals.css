@@ -4,14 +4,30 @@
 
 @layer components {
   .btn {
-    @apply py-2 lg:py-3 px-6 lg:px-8 rounded-lg xl:text-lg font-medium;
+    @apply select-none cursor-pointer border-2 py-2 lg:py-2.5 px-4 lg:px-6 rounded-lg font-semibold text-sm lg:text-base;
   }
 
   .btn-primary {
-    @apply text-pink-100 bg-rose-500 hover:bg-rose-600 transition duration-200;
+    @apply border-transparent text-pink-50 bg-rose-500 hover:bg-rose-600 transition duration-200;
+  }
+
+  .btn-secondary {
+    @apply text-rose-600 bg-transparent border-rose-500 hover:bg-rose-50 transition duration-200;
   }
 
   .answer {
-    @apply select-none cursor-pointer hover:underline;
+    @apply border-2 select-none cursor-pointer py-2 lg:py-2.5 text-center w-full rounded-lg font-semibold text-sm;
+  }
+
+  .answer-primary {
+    @apply answer text-white bg-rose-500 border-transparent hover:bg-rose-600 transition duration-200;
+  }
+
+  .answer-secondary {
+    @apply answer text-rose-600 bg-rose-100 border-transparent hover:bg-rose-200 transition duration-200;
+  }
+
+  .answer-tertiary {
+    @apply answer text-rose-600 bg-transparent border-rose-500 hover:bg-rose-50 transition duration-200;
   }
 }

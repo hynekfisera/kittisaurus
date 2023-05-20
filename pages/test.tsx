@@ -4,6 +4,7 @@ import questions from "../resources/questions";
 import { Question } from "../types/Question";
 import { Points } from "../types/Points";
 import Router from "next/router";
+import Wrapper from "../components/Wrapper";
 
 export default function Test() {
   const [number, setNumber] = useState<number>(0);
@@ -70,44 +71,45 @@ export default function Test() {
   return (
     <>
       <NextSeo title="Test" canonical="https://kittisaurus.hynekfisera.com/test" />
-      <main className="bg-gradient-to-br from-rose-200 to-orange-200 min-h-screen flex items-center">
-        <section className="max-w-screen-md mx-auto px-4 md:px-0 flex flex-col items-center gap-4">
-          <h1 className="text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-900 text-center">{question.title}</h1>
-          <div className="flex justify-center flex-wrap gap-6">
-            {question.answers.length === 2 && (
-              <>
-                <div onClick={() => onAnswer(0, 1)} className="answer">
-                  100% <strong>{question.answers[0].title}</strong>
-                </div>
-                <div onClick={() => onAnswer(0, 0.5)} className="answer">
-                  More <strong>{question.answers[0].title}</strong>
-                </div>
-                <div onClick={() => onAnswer(0, 0)} className="answer">
-                  Don{"'"}t know
-                </div>
-                <div onClick={() => onAnswer(1, 0.5)} className="answer">
-                  More <strong>{question.answers[1].title}</strong>
-                </div>
-                <div onClick={() => onAnswer(1, 1)} className="answer">
-                  100% <strong>{question.answers[1].title}</strong>
-                </div>
-              </>
-            )}
-            {question.answers.length !== 2 &&
-              question.answers.map((answer, i) => (
-                <div
-                  key={i}
-                  onClick={() => {
-                    onAnswer(i, 1);
-                  }}
-                  className="answer"
-                >
-                  {answer.title}
-                </div>
-              ))}
-          </div>
-        </section>
-      </main>
+      <Wrapper>
+        <h2 className="lg:text-lg text-gray-600 text-center -mb-2">
+          Question {number + 1}/{questions.length}
+        </h2>
+        <h1 className="text-xl lg:text-2xl font-medium text-gray-800 text-center mb-4">{question.title}</h1>
+        <div className="flex flex-col justify-center gap-4 w-full max-w-xs">
+          {question.answers.length === 2 && (
+            <>
+              <div onClick={() => onAnswer(0, 1)} className="answer-primary">
+                100% <strong>{question.answers[0].title}</strong>
+              </div>
+              <div onClick={() => onAnswer(0, 0.5)} className="answer-secondary">
+                More <strong>{question.answers[0].title}</strong>
+              </div>
+              <div onClick={() => onAnswer(0, 0)} className="answer-tertiary">
+                Don{"'"}t know
+              </div>
+              <div onClick={() => onAnswer(1, 0.5)} className="answer-secondary">
+                More <strong>{question.answers[1].title}</strong>
+              </div>
+              <div onClick={() => onAnswer(1, 1)} className="answer-primary">
+                100% <strong>{question.answers[1].title}</strong>
+              </div>
+            </>
+          )}
+          {question.answers.length !== 2 &&
+            question.answers.map((answer, i) => (
+              <div
+                key={i}
+                onClick={() => {
+                  onAnswer(i, 1);
+                }}
+                className="answer-secondary"
+              >
+                {answer.title}
+              </div>
+            ))}
+        </div>
+      </Wrapper>
     </>
   );
 }
